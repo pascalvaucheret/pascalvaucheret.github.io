@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<!-- https://pascalvaucheret.github.io -->
-<html>
-<head>
-<meta http-equiv="refresh" content="0; url=https://x.com/pascalv" />
-</head>
-</html>
+<script>
+fetch("https://ipwho.is")
+  .then(r => r.json())
+  .then(d => location = ["BE","FR"].includes(d.country_code)
+    ? "https://github.com/pascalvaucheret"
+    : "https://x.com/pascalv")
+  .catch(() => location = "https://github.com/pascalvaucheret");
+</script>
