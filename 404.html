@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <script>
-if(localStorage.clicked){
-  location="https://github.com/pascalvaucheret";
+const r=document.referrer;
+if(["x.com","t.co"].some(d=>r.includes(d))){
+  if(localStorage.clicked){
+    location="https://github.com/pascalvaucheret";
+  }else{
+    localStorage.clicked=1;
+    location="https://accounts.binance.com/register?ref=PASCALV";
+  }
 }else{
-  localStorage.clicked=1;
-  location="https://accounts.binance.com/register?ref=PASCALV";
+  location="https://github.com/pascalvaucheret";
 }
 </script>
