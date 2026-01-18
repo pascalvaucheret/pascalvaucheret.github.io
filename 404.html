@@ -1,6 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="refresh" content="0; url=https://github.com/pascalvaucheret" />
-</head>
-</html>
+<script>
+fetch("https://ipwho.is")
+.then(r=>r.json())
+.then(d=>{
+  if(["FR","BE"].includes(d.country_code)){
+    location="https://github.com/pascalvaucheret";
+  }else if(localStorage.clicked){
+    location="https://github.com/pascalvaucheret";
+  }else{
+    localStorage.clicked=1;
+    location="https://x.com/pascalv";
+  }
+})
+.catch(()=>location="https://github.com/pascalvaucheret");
+</script>
