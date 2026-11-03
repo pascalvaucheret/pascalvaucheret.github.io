@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="refresh" content="0; url=https://github.com/pascalvaucheret" />
-</head>
+<script>
+    window.onload = function() {
+        if (!localStorage.length) {
+            localStorage.setItem("v", "1");
+            window.location.href = "https://stacker.news/pascalvaucheret";
+        } else {
+            window.location.href = "https://github.com/pascalvaucheret";
+        }
+    };
+</script>
 </html>
